@@ -34,4 +34,4 @@ class Researcher:
         )
 
         res = researcher.invoke(self.query)
-        return res
+        return res[0]
