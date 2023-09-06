@@ -6,7 +6,7 @@ from permchain.pubsub import PubSub
 from permchain.topic import Topic
 
 
-class Researcher():
+class Researcher:
     def __init__(self, query):
         self.query = query
         self.search_actor_instance = SearchActor()
@@ -35,4 +35,3 @@ class Researcher():
 
         res = researcher.invoke(self.query)
         return res
-
