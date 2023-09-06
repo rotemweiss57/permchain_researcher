@@ -1,5 +1,3 @@
-from functools import partial
-
 from .actors.search_actor import SearchActor
 from .actors.writer_actor import WriterActor
 
