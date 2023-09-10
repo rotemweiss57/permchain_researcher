@@ -1,6 +1,7 @@
 langchain
 permchain
 openai
+tavily-python
 tavily_python
 duckduckgo_search
 selenium

@@ -5,7 +5,7 @@ from langchain.schema.output_parser import StrOutputParser
 
 class OpenAIWriterActor:
     def __init__(self):
-        self.model = ChatOpenAI(model="gpt-3.5-turbo-16k").with_fallbacks([ChatAnthropic(model="claude-2")])
+        self.model = ChatOpenAI(model="gpt-3.5-turbo-16k")
         self.prompt = ChatPromptTemplate.from_messages([
             ("system",
              "You are an AI critical thinker research assistant. Your sole purpose is to write well written, critically acclaimed, objective and structured reports on given text."

@@ -1,10 +1,11 @@
 from tavily import Client
+import os
 from langchain.schema.runnable import RunnableLambda
 
 
 class TavilySearchActor:
     def __init__(self):
-        self.api_key = ""
+        self.api_key = os.environ["TAVILY_API_KEY"]
 
     @property
     def runnable(self):

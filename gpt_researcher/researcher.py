@@ -11,11 +11,10 @@ class Researcher:
     def run(self, query):
         # The research inbox
         research_inbox = Topic("research")
-
         search_actor = (
             Topic.IN.subscribe()
             | {
-                "query": lambda x: x["query"],
+                "query": lambda x: x,
                 "results": self.search_actor_instance.runnable
             }
             | research_inbox.publish()
@@ -32,5 +31,5 @@ class Researcher:
             connection=InMemoryPubSubConnection(),
         )
 
-        res = researcher.invoke({"query": query})
+        res = researcher.invoke(query)
         return res[0]['answer']

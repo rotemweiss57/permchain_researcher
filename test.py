@@ -12,7 +12,7 @@ if __name__ == '__main__':
     def md2pdf(md_file, pdf_file):
         subprocess.run(["pandoc", md_file, "-o", pdf_file])
 
-    stocks = ["AMZN", "AAPL", "GOOG", "MSFT"]
+    stocks = ["MSFT"]
 
     for stock in stocks[:1]:
         researcher = Researcher(TavilySearchActor(), OpenAIWriterActor())
