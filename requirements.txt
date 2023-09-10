@@ -1,3 +1,7 @@
 langchain
 permchain
 openai
+tavily_python
+duckduckgo_search
+selenium
+beautifulsoup4

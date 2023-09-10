@@ -1,6 +1,10 @@
 # main
 import subprocess
 from gpt_researcher.researcher import Researcher
+from gpt_researcher.search_actors.tavily import TavilySearchActor
+from gpt_researcher.search_actors.gpt_researcher import GPTResearcherActor
+from gpt_researcher.writer_actors.openai import OpenAIWriterActor
+
 
 
 if __name__ == '__main__':
@@ -10,9 +14,9 @@ if __name__ == '__main__':
 
     stocks = ["AMZN", "AAPL", "GOOG", "MSFT"]
 
-    for stock in stocks:
-        researcher = Researcher(stock)
-        research = researcher.run()
+    for stock in stocks[:1]:
+        researcher = Researcher(TavilySearchActor(), OpenAIWriterActor())
+        research = researcher.run(stock)
         with open(f"output/{stock}.md", "w") as f:
             f.write(research)
         md2pdf(f"output/{stock}.md", f"output/{stock}.pdf")
