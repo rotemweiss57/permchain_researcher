@@ -4,7 +4,7 @@ from langchain.schema.runnable import RunnableLambda
 
 class TavilySearchActor:
     def __init__(self):
-        self.api_key = "4a4b0c9f18f14cd0b1c02e23816b8fe9"
+        self.api_key = ""
 
     @property
     def runnable(self):

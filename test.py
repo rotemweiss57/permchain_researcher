@@ -15,7 +15,7 @@ if __name__ == '__main__':
     stocks = ["AMZN", "AAPL", "GOOG", "MSFT"]
 
     for stock in stocks[:1]:
-        researcher = Researcher(GPTResearcherActor(), OpenAIWriterActor())
+        researcher = Researcher(TavilySearchActor(), OpenAIWriterActor())
         research = researcher.run(stock)
         with open(f"output/{stock}.md", "w") as f:
             f.write(research)
